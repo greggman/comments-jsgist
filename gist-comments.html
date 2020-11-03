@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jsGist comments</title>
+    <style>
+:root {
+  --main-bg-color: #FFF;
+  --main-fg-color: #000;
+  --link-fg-color: #24C;
+  --msg-head-bg-color: #DEF;
+  --msg-border-color: #89A;
+  --msg-accent-color: #EEE;
+}
+html {
+  background: var(--main-bg-color);
+  color: var(--main-fg-color);
+}
+@media (prefers-color-scheme: light) {
+  .comment pre {
+    background-color: #EEE;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg-color: #444;
+    --main-fg-color: #fff;
+    --link-fg-color: #ACF;
+    --msg-head-bg-color: #456;
+    --msg-border-color: #678;
+    --msg-accent-color: #222;
+  }
+}
+
+body {
+  font-family: sans-serif;
+}
+.comment {
+  margin: 0 auto 0.5em;
+}
+.comment-inner {
+  background: var(--msg-head-bg-color);
+  border-radius: 0.5em;
+  border: 1px solid var(--msg-border-color);
+  margin-left: 42px;
+}
+.comment ul p,
+.comment ol p {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+.comment .user {
+  padding: 0.5em;
+  border-bottom: 1px solid var(--msg-border-color);
+}
+.comment .avatar {
+  position: absolute;
+  left: auto;
+  top: 0.7em;
+  transform: translateX(-48px);
+}
+.comment a {
+  color: var(--link-fg-color);
+  text-decoration: none;
+}
+.comment h1 {
+  border-bottom: 1px solid var(--msg-border-color);
+}
+.comment blockquote {
+  border-left: 0.25em solid var(--msg-border-color);
+  padding: 0 1em;
+  margin: 0;
+}
+.comment .user img {
+  height: 32px;
+  border-radius: 100%;
+}
+.comment .body {
+  background: var(--main-bg-color);
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+.comment img {
+  max-width: 100%;
+}
+
+.comment .body code {
+  background-color: var(--msg-accent-color);
+  padding: 0.25em;
+}
+.comment .body pre>code {
+  padding: 0;
+  background-color: inherit;
+}
+.comment .body pre {
+  padding: 0.5em;
+  max-width: 100%;
+  overflow: auto;
+}
+    </style>
+  </head>
+  <body>
+    <div class="comments"></div>
+  </body>
+  <script src="https://unpkg.com/showdown@1.9.1/dist/showdown.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@10.3.2/styles/github-gist.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@10.3.2/styles/monokai-sublime.css" media="(prefers-color-scheme: dark)">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+  <script src="gist-comments.js" type="module"></script>
+</html>
